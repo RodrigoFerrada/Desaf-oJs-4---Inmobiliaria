@@ -1,5 +1,5 @@
-//Array de Objects Propiedades en Venta.
-const propiedadesVenta = [
+//Array de Objects Propiedades en Venta
+export const propiedadesVenta = [
   {
     id: 1,
     nombre: "Apartamento de lujo en zona exclusiva",
@@ -51,7 +51,7 @@ const propiedadesVenta = [
 ];
 
 //Array de Objects Propiedades en Alquiler
-const propiedadesAlquiler = [
+export const propiedadesAlquiler = [
   {
     id: 5,
     nombre: "Apartamento en el centro de la ciudad",
@@ -101,84 +101,3 @@ const propiedadesAlquiler = [
     pets: false,
   },
 ];
-
-//Ciclo for of Propiedades en Venta
-const propiedades = document.querySelector("#venta");
-let contadorVenta = 0;
-let resultadoVenta = "";
-for (const venta of propiedadesVenta) {
-  const mensaje1 = venta.smoke
-    ? `<p class="text-success"><i class="fas fa-smoking"></i> Permitido fumar`
-    : `<p class="text-danger"><i class="fas fa-smoking-ban"></i> No se permite fumar`;
-  const mensaje2 = venta.pets
-    ? `<p class="text-success"><i class="fas fa-paw"></i> Mascotas permitidas`
-    : `<p class="text-danger"><i class="fa-solid fa-ban"></i> No se permiten mascotas`;
-  if (contadorVenta < 3) {
-    resultadoVenta += `
-    <div class='col-md-4 mb-4'>
-  <div class="card">
-    <img
-      src=" ${venta.src}" class="card-img-top"/ alt=" ${venta.nombre}"/>
-    <div class="card-body">
-      <h5 class="card-title"> ${venta.nombre}</h5>
-      <p class="card-text"> ${venta.descripcion}</p>
-      <p>
-        <i class="fas fa-map-marker-alt"></i> ${venta.ubicacion}</p>
-      <p>
-        <i class="fas fa-bed"></i> ${venta.habitaciones} |
-        <i class="fas fa-bath"></i> ${venta.baños}
-      </p>
-      <p><i class="fas fa-dollar-sign"></i> ${venta.costo}</p>
-      <p class="text-danger">${mensaje1}</p>
-      <p class="text-danger">${mensaje2}</p>
-    </div>
-  </div>
-</div>
-    `;
-    contadorVenta++;
-  } else {
-    break;
-  }
-}
-propiedades.innerHTML = resultadoVenta;
-
-//Ciclo fo of Propiedades en Alquiler
-const pAlquiler = document.querySelector("#alquilar");
-let contadorAlquiler = 0;
-let resultadoAlquiler = "";
-for (const alquiler of propiedadesAlquiler) {
-  const mensaje1 = alquiler.smoke
-    ? `<p class="text-success"><i class="fas fa-smoking"></i> Permitido fumar`
-    : `<p class="text-danger"><i class="fas fa-smoking-ban"></i> No se permite fumar`;
-  const mensaje2 = alquiler.pets
-    ? `<p class="text-success"><i class="fas fa-paw"></i> Mascotas permitidas`
-    : `<p class="text-danger"><i class="fa-solid fa-ban"></i> No se permiten mascotas`;
-  if (contadorAlquiler < 3) {
-    resultadoAlquiler += `
-      <div class='col-md-4 mb-4'>
-    <div class="card">
-      <img
-        src=" ${alquiler.src}" class="card-img-top"/ alt=" ${alquiler.nombre}"/>
-      <div class="card-body">
-        <h5 class="card-title"> ${alquiler.nombre}</h5>
-        <p class="card-text"> ${alquiler.descripcion}</p>
-        <p>
-          <i class="fas fa-map-marker-alt"></i> ${alquiler.ubicacion}</p>
-        <p>
-          <i class="fas fa-bed"></i> ${alquiler.habitaciones} |
-          <i class="fas fa-bath"></i> ${alquiler.baños}
-        </p>
-        <p><i class="fas fa-dollar-sign"></i> ${alquiler.costo}</p>
-        <p class="text-danger">${mensaje1}</p>
-        <p class="text-danger">${mensaje2}</p>
-        
-      </div>
-    </div>
-  </div>
-      `;
-    contadorAlquiler++;
-  } else {
-    break;
-  }
-}
-pAlquiler.innerHTML = resultadoAlquiler;
