@@ -1,5 +1,5 @@
-import { propiedadesAlquiler } from "./array.js";
-import { generarTemplate } from "./template.js";
+import { propiedadesAlquiler } from "./data/array.js";
+import { generarTemplate } from "./data/template.js";
 
 const mostrarTemplate = (HTMLElement, propiedades) => {
   let resultado = "";
